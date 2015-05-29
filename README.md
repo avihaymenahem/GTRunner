@@ -1,6 +1,8 @@
-Gulp task gui runner
+# Gulp task gui runner
 
-Run 
+![screenshot](http://i.imgur.com/21XjmxU.png)
+
+## Build & Run 
 ```
 $ npm install
 $ gulp build
