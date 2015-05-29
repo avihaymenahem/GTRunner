@@ -1,0 +1,37 @@
+{
+  "name": "GTRunner",
+  "version": "1.0.0",
+  "description": "Gulp task runner GUI",
+  "main": "index.html",
+  "window": {
+    "width": 993,
+    "height": 550,
+    "minWidth": 993,
+    "minHeight": 550,
+    "resizable": false,
+    "frame": false,
+    "toolbar": false,
+    "icon": "assets/imgs/gulp-2x.png"
+  },
+  "single-instance": true,
+  "keywords": [
+    "gulp",
+    "task",
+    "runner",
+    "gui"
+  ],
+  "author": "Avihay Menahem",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.3.15",
+    "angular-sanitize": "^1.4.0",
+    "bootstrap": "^3.3.4",
+    "nedb": "^1.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-shell": "^0.4.1",
+    "gutil": "^1.6.4",
+    "node-webkit-builder": "^1.0.11"
+  }
+}

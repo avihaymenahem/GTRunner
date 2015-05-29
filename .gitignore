@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+build/
+cache/
+assets/data/main.gdb

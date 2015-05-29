@@ -1,0 +1,83 @@
+/** Variables */
+body, html {
+  height: 100%; }
+
+body {
+  background-color: #2b303b;
+  overflow: hidden; }
+
+.full-height {
+  height: 100%; }
+
+.left-col {
+  background-color: #222830; }
+  .left-col .page-header {
+    color: #dfe1e8; }
+    .left-col .page-header .add-button {
+      line-height: 23px;
+      font-size: 65%;
+      cursor: pointer; }
+  .left-col .projects-list li {
+    cursor: pointer;
+    color: #dfe1e8;
+    border: 0; }
+    .left-col .projects-list li .glyphicon {
+      display: none; }
+    .left-col .projects-list li:hover .glyphicon {
+      display: block; }
+
+.right-col .top-row {
+  background-color: #1c1f26;
+  margin-bottom: 20px;
+  height: 50px;
+  padding-right: 10px;
+  color: #96a0b0; }
+  .right-col .top-row .glyphicon {
+    line-height: 50px;
+    cursor: pointer; }
+.right-col .main-content {
+  color: #dfe1e8;
+  height: calc(100% - 120px);
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .right-col .main-content .well {
+    background-color: #1c1f26;
+    box-shadow: none;
+    border: none;
+    border-radius: 0; }
+    .right-col .main-content .well .glyphicon {
+      transition: all 0.2s;
+      opacity: 0;
+      font-size: 20px;
+      cursor: pointer; }
+    .right-col .main-content .well:hover .glyphicon {
+      opacity: 1; }
+
+.console-box {
+  height: 260px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0; }
+  .console-box.closed {
+    bottom: -230px; }
+  .console-box .header {
+    background-color: #ddd;
+    height: 30px;
+    padding-right: 10px; }
+    .console-box .header .glyphicon {
+      cursor: pointer;
+      line-height: 30px; }
+  .console-box .content {
+    height: calc(100% - 30px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: #272822; }
+    .console-box .content pre {
+      background-color: transparent;
+      color: #eaeaea;
+      border: none;
+      padding: 0; }
+
+/*# sourceMappingURL=main.css.map */

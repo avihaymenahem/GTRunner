@@ -1,0 +1,8 @@
+{
+  "Paths" : {
+    "App" : {
+      "Shared" : "./app/shared/",
+      "Components" : "./app/components/"
+    }
+  }
+}
