@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     nwBuilder = require('node-webkit-builder');
 
 var Globals = {
-    Platform : "osx64",
+    Platform : "win64",
     nwVersion : "0.12.2"
 };
 

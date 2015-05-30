@@ -58,6 +58,7 @@ body {
     padding-right: 10px;
     color: #96a0b0;
     .glyphicon {
+      -webkit-app-region: no-drag;
       line-height: 50px;
       cursor: pointer;
     }

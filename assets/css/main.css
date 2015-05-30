@@ -34,6 +34,7 @@ body {
   padding-right: 10px;
   color: #96a0b0; }
   .right-col .top-row .glyphicon {
+    -webkit-app-region: no-drag;
     line-height: 50px;
     cursor: pointer; }
 .right-col .main-content {

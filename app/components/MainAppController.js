@@ -73,20 +73,35 @@ MainAppController.prototype.scrollToConsoleBottom = function () {
 MainAppController.prototype.runTask = function (obj, $scope) {
     var self = this;
     var util = require('util'),
-        exec = require('child_process').exec,
-        path = require('path');
+        spawn = require('child_process').exec,
+        path = require('path'),
+        currentProjectObj = $scope.currentProject;
 
     $scope.consoleClosed = false;
 
-    var currentProjectObj = $scope.currentProject;
+    var command = spawn('cd ' + path.dirname(currentProjectObj.path) + ' && gulp ' + obj);
 
-    exec('cd ' + path.dirname(currentProjectObj.path) + ' && gulp ' + obj, function (error, stdout, stderr) {
-        if(stdout !== null) $scope.consoleCode += "<code>" + stdout.trim() + "</code>";
-        if(stderr !== null) $scope.consoleCode += "<code>" + stderr.trim() + "</code>";
-        if(error !== null) $scope.consoleCode += "<code> \r\n" + error.toString().trim() + "</code>";
-        $scope.$digest();
-        self.scrollToConsoleBottom();
+    command.stdout.on('data', function (data) {
+        self.printLineToConsole($scope, data);
     });
+
+    command.stderr.on('data', function (data) {
+        self.printLineToConsole($scope, data, true);
+    });
+
+    command.on('exit', function (code) {
+        self.printLineToConsole('child process exited with code ' + code);
+    });
+};
+
+MainAppController.prototype.printLineToConsole = function($scope, data, isError) {
+    if(!data) {
+        return;
+    }
+    var classToAdd = isError ? "error" : "";
+    $scope.consoleCode += "<code class='" + classToAdd + "'>" + data.trim() + "</code>";
+    $scope.$digest();
+    this.scrollToConsoleBottom();
 };
 
 MainAppController.prototype.getProjects = function () {
