@@ -10,7 +10,7 @@
     "minHeight": 550,
     "resizable": false,
     "frame": false,
-    "toolbar": true,
+    "toolbar": false,
     "icon": "assets/imgs/gulp-2x.png"
   },
   "single-instance": true,
