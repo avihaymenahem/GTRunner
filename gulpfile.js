@@ -4,14 +4,31 @@ var gulp = require('gulp'),
     nwBuilder = require('node-webkit-builder');
 
 var Globals = {
-    Platform : "win64",
+    Platform : "osx64",
     nwVersion : "0.12.2"
 };
 
 gulp.task('default', ['open']);
 
 gulp.task('open', function () {
-    gulp.src('./cache/' + Globals.nwVersion + '/' + Globals.Platform + '/nw.exe', {read: true})
+    var openPath;
+    var winPath = './cache/' + Globals.nwVersion + '/' + Globals.Platform + '/nw.exe',
+        osxPath = 'open ./build/GTRunner/' + Globals.Platform + 'GTRunner' ;
+
+    switch(Globals.Platform.substring(0, 3))
+    {
+        case "win":
+            openPath = winPath;
+            break;
+
+        default:
+        case "osx":
+        case "lin":
+            openPath = osxPath;
+            break;
+    }
+
+    gulp.src(openPath, {read: true})
         .pipe(shell(['<%= file.path %> ./']));
 });
 
