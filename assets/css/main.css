@@ -27,6 +27,7 @@ body {
       display: block; }
 
 .right-col .top-row {
+  -webkit-app-region: drag;
   background-color: #1c1f26;
   margin-bottom: 20px;
   height: 50px;
