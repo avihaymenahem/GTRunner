@@ -8,6 +8,8 @@ var Globals = {
     nwVersion : "0.12.2"
 };
 
+gulp.task('default', ['open']);
+
 gulp.task('open', function () {
     gulp.src('./cache/' + Globals.nwVersion + '/' + Globals.Platform + '/nw.exe', {read: true})
         .pipe(shell(['<%= file.path %> ./']));
