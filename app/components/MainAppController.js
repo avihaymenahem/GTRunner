@@ -65,7 +65,13 @@ function MainAppController($scope, MainDao, FileParse) {
     };
 }
 
+MainAppController.prototype.scrollToConsoleBottom = function () {
+    var consoleContent = window.document.querySelector(".console-box .content");
+    consoleContent.scrollTop = consoleContent.scrollHeight;
+};
+
 MainAppController.prototype.runTask = function (obj, $scope) {
+    var self = this;
     var util = require('util'),
         exec = require('child_process').exec,
         path = require('path');
@@ -79,6 +85,7 @@ MainAppController.prototype.runTask = function (obj, $scope) {
         if(stderr !== null) $scope.consoleCode += "<code>" + stderr.trim() + "</code>";
         if(error !== null) $scope.consoleCode += "<code> \r\n" + error.toString().trim() + "</code>";
         $scope.$digest();
+        self.scrollToConsoleBottom();
     });
 };
 
