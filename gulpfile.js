@@ -16,7 +16,7 @@ gulp.task('open', function () {
 gulp.task('build', function () {
     var nw = new nwBuilder({
         version : Globals.nwVersion,
-        files : ["./**", "!./node_modules/gulp/**", "!./node_modules/gutil/**", "!./node_modules/node-webkit-builder/**", "!./node_modules/gulp-shell/**"],
+        files : ["./**", "!./node_modules/gulp/**", "!./node_modules/gutil/**", "!./node_modules/node-webkit-builder/**", "!./node_modules/gulp-shell/**", "!./build/**", "!./cache/**"],
         platforms : (!Globals.Platform || Globals.Platform == 'all' ? ['osx32', 'osx64', 'linux32', 'linux64', 'win32', 'win64'] : [Globals.Platform])
     }).on('log', function (msg) { gutil.log('node-webkit-builder', msg) });
     return nw.build().catch(function (err) {
