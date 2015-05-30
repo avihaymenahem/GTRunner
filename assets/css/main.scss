@@ -23,6 +23,7 @@ body {
 
   .page-header {
     color: $textColor;
+
     .add-button {
       line-height: 23px;
       font-size: 65%;
@@ -50,6 +51,7 @@ body {
 .right-col {
 
   .top-row {
+    -webkit-app-region: drag;
     background-color: $lightGrey;
     margin-bottom: 20px;
     height: 50px;
